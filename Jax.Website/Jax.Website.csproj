@@ -262,6 +262,7 @@
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="a\dist\css\styles.min.css" />
     <Content Include="a\dist\js\jquery.slim.min.js" />
     <Content Include="browserconfig.xml" />
     <Content Include="config\grid.editors.config.js" />
@@ -360,6 +361,10 @@
     <Content Include="a\src\styles\06-components\components.scss" />
     <Content Include="a\src\styles\07-trumps\trumps.scss" />
     <Content Include="a\src\styles\styles.scss" />
+    <Content Include="a\dist\css\styles.min.css.map" />
+    <Content Include="config\connectionString.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
