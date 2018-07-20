@@ -46,12 +46,12 @@ namespace Jax.Website.Models
 		}
 
 		///<summary>
-		/// Body Text: This is the general text on the page
+		/// Content: The main content of the site.
 		///</summary>
-		[ImplementPropertyType("bodyText")]
-		public IHtmlString BodyText
+		[ImplementPropertyType("content")]
+		public Newtonsoft.Json.Linq.JToken Content
 		{
-			get { return this.GetPropertyValue<IHtmlString>("bodyText"); }
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
 		}
 	}
 }
