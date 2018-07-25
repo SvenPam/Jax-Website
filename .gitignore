@@ -244,7 +244,7 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-/App_Data/
+*/App_Data/**
 **/a/dist/*
 Media/
 Thumbs.db
