@@ -1,5 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Base>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+	Layout = "Master.cshtml";
 }
+<img src="@Url.GetCropUrl(Model.Content, "heroImage", "Desktop")"/>
+@RenderBody()
+
+

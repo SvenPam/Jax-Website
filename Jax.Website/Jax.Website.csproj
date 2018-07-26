@@ -398,6 +398,11 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="site.webmanifest" />
     <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\Partials\_metadata.cshtml" />
+    <Content Include="Views\Partials\_favicon.cshtml" />
+    <Content Include="Views\Base.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
