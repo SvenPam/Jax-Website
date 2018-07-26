@@ -20,16 +20,27 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Jax.Website.Models
 {
-	/// <summary>Home</summary>
-	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IBase
+	// Mixin content Type 1062 with alias "base"
+	/// <summary>_base</summary>
+	public partial interface IBase : IPublishedContent
+	{
+		/// <summary>Hero Image</summary>
+		Umbraco.Web.Models.ImageCropDataSet HeroImage { get; }
+
+		/// <summary>SEO Meta Data</summary>
+		Epiphany.SeoMetadata.SeoMetadata SEometaData { get; }
+	}
+
+	/// <summary>_base</summary>
+	[PublishedContentModel("base")]
+	public partial class Base : PublishedContentModel, IBase
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "base";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Home(IPublishedContent content)
+		public Base(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +51,9 @@ namespace Jax.Website.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Base, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Content: The main content of the site.
-		///</summary>
-		[ImplementPropertyType("content")]
-		public Newtonsoft.Json.Linq.JToken Content
-		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
 		}
 
 		///<summary>
@@ -60,8 +62,11 @@ namespace Jax.Website.Models
 		[ImplementPropertyType("heroImage")]
 		public Umbraco.Web.Models.ImageCropDataSet HeroImage
 		{
-			get { return Jax.Website.Models.Base.GetHeroImage(this); }
+			get { return GetHeroImage(this); }
 		}
+
+		/// <summary>Static getter for Hero Image</summary>
+		public static Umbraco.Web.Models.ImageCropDataSet GetHeroImage(IBase that) { return that.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("heroImage"); }
 
 		///<summary>
 		/// SEO Meta Data
@@ -69,7 +74,10 @@ namespace Jax.Website.Models
 		[ImplementPropertyType("sEOMetaData")]
 		public Epiphany.SeoMetadata.SeoMetadata SEometaData
 		{
-			get { return Jax.Website.Models.Base.GetSEometaData(this); }
+			get { return GetSEometaData(this); }
 		}
+
+		/// <summary>Static getter for SEO Meta Data</summary>
+		public static Epiphany.SeoMetadata.SeoMetadata GetSEometaData(IBase that) { return that.GetPropertyValue<Epiphany.SeoMetadata.SeoMetadata>("sEOMetaData"); }
 	}
 }

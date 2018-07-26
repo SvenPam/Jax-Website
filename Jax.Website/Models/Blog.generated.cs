@@ -20,16 +20,16 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Jax.Website.Models
 {
-	/// <summary>Home</summary>
-	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, IBase
+	/// <summary>Blog</summary>
+	[PublishedContentModel("blog")]
+	public partial class Blog : PublishedContentModel, IBase
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "blog";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Home(IPublishedContent content)
+		public Blog(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -40,18 +40,9 @@ namespace Jax.Website.Models
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blog, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Content: The main content of the site.
-		///</summary>
-		[ImplementPropertyType("content")]
-		public Newtonsoft.Json.Linq.JToken Content
-		{
-			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("content"); }
 		}
 
 		///<summary>

@@ -308,6 +308,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Article.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Base.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Blog.generated.cs">
+      <DependentUpon>ModelsBuilder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\File.generated.cs">
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
     </Compile>
@@ -328,9 +337,9 @@
       <LastGenOutput>ModelsBuilder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Models\ModelsBuilder.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelsBuilder.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
