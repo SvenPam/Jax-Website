@@ -2,7 +2,9 @@
 @{
 	Layout = "Master.cshtml";
 }
-<img src="@Url.GetCropUrl(Model.Content, "heroImage", "Desktop")"/>
+<div class="hero">
+    <img class="hero__overlay" src="@Url.GetCropUrl(Model.Content, "heroImage", "XL Desktop")" />
+</div>
 @RenderBody()
 
 
