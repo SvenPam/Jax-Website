@@ -1,6 +1,23 @@
-﻿.hero {
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.hero {
+    position: relative;
+    max-width: 100%;
+
+    &__image {
+        @include img-fluid();
+    }
+
     &__overlay {
-        background-color: rgba(56, 56, 56,.5);
-        position: relative;
+        background-color: transparentize($black,.5);
+        display: block;
+        position: absolute;
+        content: '';
+        z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 }

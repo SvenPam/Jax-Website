@@ -1,0 +1,11 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.logo {
+    fill: $white;
+    transition: fill .25s ease-in-out;
+
+    &:hover {
+        fill: $secondary;
+    }
+}
