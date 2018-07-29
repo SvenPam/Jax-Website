@@ -1,11 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	Layout = null;
+    Layout = null;
 }
 
 @* the fun starts here *@
 <!doctype html>
-<html lang="en-gb">
+<html lang="en-gb" dir="ltr">
 
 <head>
     <meta charset="utf-8">
@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    @Html.Partial("~/Views/Partials/_header.cshtml")
     @RenderBody()
+    @Html.Partial("~/Views/Partials/_footer.cshtml")
 </body>
 </html>
