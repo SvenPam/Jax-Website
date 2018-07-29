@@ -1,0 +1,20 @@
+﻿/// <reference path='../01-settings/settings' />
+/// <reference path='../02-tools/tools' />
+
+.footer {
+    background-color: $brand-primary;
+    height: 50%;
+
+    &__social {
+        fill: $white;
+        transition: fill .25s ease-in-out;
+    }
+
+    &--buttons {
+        width: 50px;
+
+        &:hover {
+            fill: $secondary;
+        }
+    }
+}
