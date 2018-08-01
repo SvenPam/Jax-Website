@@ -1,10 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IBase>
 @{
 	Layout = "Master.cshtml";
 }
 <section class="hero">
-    <img class="hero__image" src="@Url.GetCropUrl(Model.Content, "heroImage", "XL Desktop")" />
+    <img class="hero__image" src="@Url.GetCropUrl(Model, "heroImage", "XL Desktop")" />
     <div class="hero__overlay" ></div>
+    @(!string.IsNullOrWhiteSpace(Model.SEometaData.Title)? Model.SEometaData.Title: Model.Name)
 </section>
 @RenderBody()
 

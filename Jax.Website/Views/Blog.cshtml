@@ -1,5 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<Blog>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "Base.cshtml";
+    Layout = "Base.cshtml";
+
+    <ul class="list">
+        <h1></h1>
+        @foreach (var page in Model.Content.Children.Where(x => x.IsVisible()))
+        {
+            <li>
+                <a href="@page.Url">
+                    @page.Name
+                </a>
+            </li>
+        }
+    </ul>
 }
