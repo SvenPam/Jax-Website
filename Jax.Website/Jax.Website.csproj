@@ -407,6 +407,9 @@
     <Content Include="Views\Base.cshtml" />
     <Content Include="Views\Partials\_header.cshtml" />
     <Content Include="Views\Partials\_footer.cshtml" />
+    <Content Include="Web.Live.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
