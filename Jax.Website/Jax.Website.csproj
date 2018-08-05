@@ -379,9 +379,6 @@
     <Content Include="a\src\styles\07-trumps\trumps.scss" />
     <Content Include="a\src\styles\styles.scss" />
     <Content Include="a\dist\css\styles.min.css.map" />
-    <Content Include="config\connectionString.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Plugins\Epiphany.SeoMetadata\package.manifest" />
     <Content Include="a\src\styles\06-components\_hero.scss" />
     <Content Include="a\src\styles\06-components\_nav.scss" />
