@@ -6,6 +6,7 @@
     .lazy-load {
         width: 100%;
         height: auto;
+        padding-top: 75px;
     }
 
     position: relative;
@@ -36,11 +37,12 @@
             color: $white;
             position: absolute;
             z-index: 10;
-            font-size: 5rem;
+            font-size: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding-top: 3rem;
         }
     }
 }
