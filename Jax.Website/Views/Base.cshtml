@@ -1,12 +1,21 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IBase>
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 <section class="hero">
-    <img class="hero__image" src="@Url.GetCropUrl(Model, "heroImage", "XL Desktop")" />
-    <div class="hero__overlay" ></div>
-    @(!string.IsNullOrWhiteSpace(Model.SEometaData.Title)? Model.SEometaData.Title: Model.Name)
-</section>
-@RenderBody()
+    <img class="lazy-load"
+         data-sizes="auto"
+         data-srcset="@Url.GetCropUrl(Model, "heroImage", "Mobile") 322w,
+        @Url.GetCropUrl(Model, "heroImage", "Desktop") 800w,
+        @Url.GetCropUrl(Model, "heroImage", "XL Desktop") 1920w,
+        @Url.GetCropUrl(Model, "heroImage", "Large Desktop") 3840w"
+         src="@Url.GetCropUrl(Model, "heroImage", "Desktop") 1920w"/>
+
+
+        @*<img class="hero__image"  src="@Url.GetCropUrl(Model, "heroImage", "Desktop")" />*@
+        <div class="hero__overlay"></div>
+        <div class="hero__title"> @(!string.IsNullOrWhiteSpace(Model.SEometaData.Title) ? Model.SEometaData.Title : Model.Name) </div>
+    </section>
+    @RenderBody()
 
 

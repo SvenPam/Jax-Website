@@ -2,16 +2,42 @@
 /// <reference path='../02-tools/tools' />
 
 .hero {
+
+    .lazy-load {
+        width: 100%;
+        height: auto;
+    }
+
     position: relative;
     max-width: 100%;
 
     &__image {
         @include img-fluid();
+
+        img {
+            width: 100%;
+        }
     }
+
+    /*&__lazyload {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        max-width: none;
+        min-height: 100%;
+        min-width: 100%;
+        -webkit-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }*/
 
     &__overlay {
         background-color: transparentize($black,.5);
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: absolute;
         content: '';
         z-index: 10;

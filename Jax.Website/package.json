@@ -80,5 +80,8 @@
         "max-depth": "3"
       }
     }
+  },
+  "dependencies": {
+    "lazysizes": "^4.1.0"
   }
 }
